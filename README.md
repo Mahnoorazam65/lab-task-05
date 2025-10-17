@@ -9,4 +9,4 @@ Each task section is clearly labeled with comments in the code.
 
 ## 🔗 GitHub Link: https://github.com/Mahnoorazam65/lab-task-05.git.
 
-## Live Repository link:
+## Live Repository link: https://mahnoorazam65.github.io/lab-task-05/
