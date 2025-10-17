@@ -1,0 +1,2357 @@
+/* Mobile-first base */
+:root {
+  --gap: 12px;
+  --card-bg: #ffffff;
+  --muted: #666;
+  --accent: #0366d6;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  margin: 0;
+  background: #f5f7fb;
+  color: #111;
+  line-height: 1.45;
+}
+
+/* Layout */
+.container {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  padding: 18px 0;
+}
+.lead {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* Demo cards */
+.demo-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Boxes used to show display types */
+.box {
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin: 6px 0;
+  display: block; /* default for .box; will be overridden below */
+  background: #eef6ff;
+  border: 1px solid rgba(3, 102, 214, 0.12);
+}
+
+/* Explicit examples: */
+.block-box {
+  display: block; /* demonstrates block-level */
+  width: 100%;
+}
+
+.inline-box {
+  display: inline; /* inline element; width and height ignored */
+  background: #fff6ee;
+  border-color: rgba(255, 140, 0, 0.18);
+  margin-left: 8px;
+}
+
+.inline-block-box {
+  display: inline-block; /* inline-block accepts width/height */
+  width: 160px;
+  background: #effff0;
+  border-color: rgba(34, 197, 94, 0.14);
+  margin-left: 8px;
+}
+
+/* Fake table layout */
+.fake-table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+}
+.fake-row {
+  display: table-row;
+}
+.fake-cell {
+  display: table-cell;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hidden vs visibility */
+.hidden-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.visibility-hidden-box {
+  visibility: hidden;
+}
+.display-none-box {
+  display: none;
+}
+
+/* Responsive cards (mobile-first) */
+.responsive-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.card {
+  padding: 14px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+/* Explanatory text */
+.explain {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+/* Larger screens: change displays and layout */
+@media (min-width: 600px) {
+  .demo-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .block-box {
+    width: 220px;
+  }
+  .responsive-row {
+    flex-direction: row;
+  }
+  .card {
+    flex: 1 1 0;
+  }
+}
+
+/* Desktop: show table example narrow cells more distinctly */
+@media (min-width: 1024px) {
+  .fake-cell {
+    padding: 14px 18px;
+  }
+}
+
+/* =========================
+   TASK 2: FLOAT-BASED MAGAZINE LAYOUT
+   ========================= */
+#task2 {
+  background: #f9fafc;
+  padding: 25px 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task2 h1 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 25px;
+}
+
+.mag-article {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden; /* contains floated elements */
+}
+
+.article-img {
+  width: 220px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 15px 10px 0;
+}
+
+/* Float positioning */
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 10px 15px;
+}
+
+/* Sidebar column */
+.sidebar {
+  float: right;
+  width: 30%;
+  background: #eef3ff;
+  border: 1px solid #cfd8ff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h3 {
+  color: #0d47a1;
+  margin-top: 0;
+}
+
+/* Clearfix utility */
+.clear {
+  clear: both;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .float-left,
+  .float-right,
+  .sidebar {
+    float: none;
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+
+  .article-img {
+    display: block;
+    margin: 0 auto 15px;
+  }
+}
+
+/* =========================
+   TASK 3: CSS POSITIONING SHOWCASE
+   ========================= */
+#task3 {
+  background: #f8faff;
+  padding: 25px 20px 100px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task3 h1 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 25px;
+}
+
+/* Container for positioned boxes */
+.pos-container {
+  position: relative; /* establishes reference for absolute positioning */
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  height: 300px;
+  border-radius: 10px;
+  padding: 15px;
+  overflow: hidden;
+}
+
+/* Shared box styling */
+.pos-box {
+  width: 130px;
+  height: 70px;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+/* Static (default) */
+.static-box {
+  position: static;
+  background: #9c27b0;
+}
+
+/* Relative: moves relative to its normal spot */
+.relative-box {
+  position: relative;
+  top: 20px;
+  left: 40px;
+  background: #2196f3;
+}
+
+/* Absolute: positioned relative to .pos-container */
+.absolute-box {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  background: #4caf50;
+}
+
+/* Sticky: toggles between relative and fixed during scroll */
+.sticky-box {
+  position: sticky;
+  top: 0;
+  background: #ff9800;
+}
+
+/* Scrollable area to demonstrate sticky */
+.pos-scroll-area {
+  margin-top: 30px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px 15px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.pos-scroll-area p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.pos-info {
+  text-align: center;
+  color: #555;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+/* =========================
+   TASK 4: FLEXBOX GALLERY LAYOUT
+   ========================= */
+#task4 {
+  background: #f7fbff;
+  padding: 25px 20px 60px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task4 h1 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 25px;
+}
+
+/* Gallery container uses Flexbox */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+}
+
+/* Each gallery item */
+.gallery-item {
+  flex: 1 1 calc(30% - 16px);
+  max-width: 300px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.caption {
+  font-size: 0.95rem;
+  color: #333;
+  padding: 8px;
+  background: #f1f5ff;
+  border-top: 1px solid #d9e3ff;
+}
+
+.gallery-note {
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .gallery-item {
+    flex: 1 1 calc(45% - 16px);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-item {
+    flex: 1 1 100%;
+  }
+}
+/* =========================
+   TASK 5: CSS GRID LAYOUT — CAR THEME
+   ========================= */
+#task5 {
+  background: #f5f7ff;
+  padding: 25px 20px 60px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task5 h1 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 25px;
+}
+
+/* Grid container for the car layout */
+.car-grid {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "hero hero hero"
+    "list specs specs"
+    "footer footer footer";
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+}
+
+/* Grid areas */
+.car-header {
+  grid-area: header;
+  background: #0d47a1;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 15px 0;
+  border-radius: 8px;
+}
+
+.car-hero {
+  grid-area: hero;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.car-hero img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(80%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.hero-text p {
+  margin-top: 6px;
+  font-size: 1.1rem;
+}
+
+/* Car list area */
+.car-list {
+  grid-area: list;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.car-item {
+  background: #f9fbff;
+  border-radius: 8px;
+  border: 1px solid #d9e3ff;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.car-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.car-item h3 {
+  color: #0d47a1;
+  margin: 10px 0 5px;
+}
+
+.car-item p {
+  color: #444;
+  font-size: 0.9rem;
+}
+
+/* Specs area */
+.car-specs {
+  grid-area: specs;
+  background: #e8f0ff;
+  border-radius: 8px;
+  border: 1px solid #cfd8ff;
+  padding: 20px;
+}
+
+.car-specs h3 {
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.car-specs ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.car-specs li {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Footer */
+.car-footer {
+  grid-area: footer;
+  background: #0d47a1;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .car-grid {
+    grid-template-areas:
+      "header"
+      "hero"
+      "list"
+      "specs"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .car-hero img {
+    height: 220px;
+  }
+}
+
+.grid-note {
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+/* =========================
+   TASK 6: CSS TRANSITIONS & TRANSFORMATIONS — CAR THEME
+   ========================= */
+#task6 {
+  background: #f3f7ff;
+  padding: 25px 20px 60px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task6 h1 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 25px;
+}
+
+/* Container */
+.car-animation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Base car card */
+.car-card {
+  background: #ffffff;
+  border: 1px solid #d6defa;
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.car-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.car-card h3 {
+  color: #0d47a1;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.car-card p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Transition examples */
+.zoom-card:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.rotate-card:hover img {
+  transform: rotate(8deg) scale(1.05);
+}
+
+.move-card:hover img {
+  transform: translateY(-12px);
+}
+
+.skew-card:hover img {
+  transform: skewY(-5deg);
+}
+
+/* Card hover animation for container */
+.car-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .car-animation-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.transition-note {
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   TASK 7: HOLY GRAIL LAYOUT — CAR THEME
+   ========================= */
+#task7 {
+  background: #f5f8ff;
+  padding: 25px 20px 60px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task7 h1 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 25px;
+}
+
+/* Base style for all layouts */
+.holy-grail {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 30px;
+  border: 1px solid #d9e3ff;
+  overflow: hidden;
+}
+
+.holy-grail h2 {
+  color: #0d47a1;
+  border-bottom: 2px solid #bbdefb;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+.hg-left,
+.hg-center,
+.hg-right {
+  padding: 15px;
+  border-radius: 8px;
+  background: #f9fbff;
+  border: 1px solid #e0e8ff;
+}
+
+.hg-center img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* ---------- 7A Float ---------- */
+.float-layout .hg-left,
+.float-layout .hg-right,
+.float-layout .hg-center {
+  margin-bottom: 12px;
+}
+
+@media (min-width: 900px) {
+  .float-layout .hg-left {
+    float: left;
+    width: 20%;
+    margin-right: 2%;
+    background: #e3f2fd;
+  }
+  .float-layout .hg-right {
+    float: right;
+    width: 20%;
+    margin-left: 2%;
+    background: #e3f2fd;
+  }
+  .float-layout .hg-center {
+    margin: 0 22% 0 22%;
+    background: #ffffff;
+  }
+  .hg-clear {
+    clear: both;
+  }
+}
+
+/* ---------- 7B Flexbox ---------- */
+.flex-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (min-width: 900px) {
+  .flex-layout {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .flex-layout .hg-left,
+  .flex-layout .hg-right {
+    flex: 0 0 20%;
+    background: #e8f0ff;
+  }
+  .flex-layout .hg-center {
+    flex: 1;
+    background: #fff;
+  }
+}
+
+/* ---------- 7C Grid ---------- */
+.grid-layout {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "center"
+    "left"
+    "right";
+}
+
+@media (min-width: 900px) {
+  .grid-layout {
+    grid-template-columns: 20% 1fr 20%;
+    grid-template-areas: "left center right";
+  }
+  .grid-layout .hg-left {
+    grid-area: left;
+    background: #e3f2fd;
+  }
+  .grid-layout .hg-center {
+    grid-area: center;
+    background: #fff;
+  }
+  .grid-layout .hg-right {
+    grid-area: right;
+    background: #e3f2fd;
+  }
+}
+
+/* Shared typographic styling */
+.hg-left ul,
+.hg-right ul {
+  padding-left: 18px;
+  color: #333;
+  line-height: 1.5;
+}
+.hg-center h3 {
+  color: #0d47a1;
+  margin-top: 0;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .hg-left,
+  .hg-right {
+    background: #f1f6ff;
+  }
+}
+/* =========================
+   TASK 8: E-COMMERCE PRODUCT GRID — CAR THEME
+   ========================= */
+#task8 {
+  background: linear-gradient(180deg, #e3f2fd, #f9fbff);
+  padding: 40px 20px 70px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+#task8 h1 {
+  text-align: center;
+  color: #0d47a1;
+}
+.task-subtitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 35px;
+  font-size: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.product-card {
+  background: #fff;
+  border: 1px solid #dce4ff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 160px;
+  object-fit: cover;
+}
+.product-card h3 {
+  color: #0d47a1;
+  font-size: 1.05rem;
+  margin: 10px 0 5px;
+}
+.product-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+.price {
+  display: block;
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.product-card button {
+  background: #0d47a1;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.product-card button:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+@media (max-width: 500px) {
+  .product-card img {
+    height: 130px;
+  }
+}
+/* =========================
+   TASK 9: DASHBOARD LAYOUT — CAR THEME
+   ========================= */
+#task9 {
+  background: #f3f6ff;
+  padding: 40px 20px 60px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task9 h1 {
+  text-align: center;
+  color: #0d47a1;
+}
+
+.task-subtitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 35px;
+}
+
+/* Dashboard grid container */
+.dashboard {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Sidebar */
+.dash-sidebar {
+  background: #0d47a1;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+.dash-sidebar h2 {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.dash-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.dash-sidebar li {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+.dash-sidebar li:hover {
+  background: #1565c0;
+}
+
+/* Main area */
+.dash-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Stats cards */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.stats .card {
+  flex: 1;
+  background: #e3f2fd;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 200px;
+  text-align: center;
+  border: 1px solid #cfe3ff;
+}
+.stats .card h3 {
+  color: #0d47a1;
+  font-size: 1rem;
+}
+.stats .card p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1565c0;
+  margin: 6px 0;
+}
+.stats .card span {
+  color: #388e3c;
+  font-size: 0.9rem;
+}
+
+/* Analytics section */
+.analytics {
+  background: #f9fbff;
+  border: 1px solid #dbe2ff;
+  border-radius: 10px;
+  padding: 20px;
+}
+.analytics h2 {
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+.analytics img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Table: Recent Orders */
+.recent-orders {
+  background: #f9fbff;
+  border: 1px solid #dbe2ff;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: auto;
+}
+.recent-orders table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.recent-orders th,
+.recent-orders td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+}
+.recent-orders th {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+.status {
+  font-weight: 600;
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+.status.success {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+.status.cancelled {
+  background: #ffcdd2;
+  color: #b71c1c;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+  .dash-sidebar {
+    text-align: center;
+  }
+  .stats {
+    flex-direction: column;
+  }
+}
+/* =========================
+   TASK 10: MEDIA QUERY DEMONSTRATION — CAR THEME
+   ========================= */
+#task10 {
+  background: #f3f7ff;
+  padding: 40px 20px 70px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task10 h1 {
+  text-align: center;
+  color: #0d47a1;
+}
+
+.task-subtitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 35px;
+}
+
+/* Main container */
+.media-demo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid #dbe2ff;
+  flex-wrap: wrap;
+}
+
+.car-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.car-info h2 {
+  color: #0d47a1;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.car-info p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.car-info button {
+  background: #0d47a1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+}
+
+.car-info button:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+
+.car-image {
+  flex: 1;
+  text-align: center;
+}
+
+.car-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.car-image img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .car-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .car-info p {
+    font-size: 0.95rem;
+  }
+
+  .car-image img {
+    max-width: 400px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .media-demo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .car-info h2 {
+    font-size: 1.3rem;
+  }
+
+  .car-info p {
+    font-size: 0.9rem;
+  }
+
+  .car-info button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .car-image img {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 15px;
+  }
+}
+/* =========================
+   TASK 11: RESPONSIVE MAGAZINE LAYOUT — CAR THEME
+   ========================= */
+#task11 {
+  background: linear-gradient(180deg, #f3f6ff, #e3f2fd);
+  padding: 40px 20px 70px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task11 h1 {
+  text-align: center;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.task-subtitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 35px;
+  font-size: 1rem;
+}
+
+/* Grid container */
+.magazine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Magazine cards */
+.mag-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #d9e3ff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mag-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
+}
+
+.mag-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.mag-content {
+  padding: 15px;
+}
+
+.mag-content h3 {
+  color: #0d47a1;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.mag-content p {
+  color: #333;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.mag-content button {
+  background: #0d47a1;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.mag-content button:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+
+/* Responsive text adjustments */
+@media (max-width: 768px) {
+  .mag-content h3 {
+    font-size: 1rem;
+  }
+  .mag-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================
+   TASK 12: FLEXBOX FORM BUILDER — CAR THEME
+   ========================= */
+#task12 {
+  background: linear-gradient(180deg, #e3f2fd, #f3f6ff);
+  padding: 40px 20px 70px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task12 h1 {
+  text-align: center;
+  color: #0d47a1;
+}
+
+.task-subtitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 35px;
+}
+
+/* Form styling */
+.car-form {
+  max-width: 850px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #dbe2ff;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form row */
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Each group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 250px;
+}
+
+.form-group.full-width {
+  flex: 100%;
+}
+
+label {
+  font-weight: 600;
+  color: #0d47a1;
+  margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #cfd8ff;
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0d47a1;
+  box-shadow: 0 0 4px rgba(13, 71, 161, 0.3);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Submit button */
+.form-row.center {
+  justify-content: center;
+}
+
+button[type="submit"] {
+  background: #0d47a1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+  .car-form {
+    padding: 20px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}
+/* =========================
+   TASK 13: PORTFOLIO LAYOUT — CAR THEME
+   ========================= */
+#task13 {
+  background: linear-gradient(180deg, #f3f6ff, #e3f2fd);
+  padding: 40px 20px 70px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task13 h1 {
+  text-align: center;
+  color: #0d47a1;
+}
+
+.task-subtitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 35px;
+}
+
+/* Portfolio container grid */
+.portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Portfolio card */
+.portfolio-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #dce4ff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Portfolio info (Flexbox layout inside card) */
+.portfolio-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 15px;
+}
+
+.portfolio-info h3 {
+  color: #0d47a1;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.portfolio-info p {
+  color: #333;
+  font-size: 0.9rem;
+  flex-grow: 1;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.portfolio-info button {
+  align-self: flex-start;
+  background: #0d47a1;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.portfolio-info button:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+
+/* Responsive text & layout tweaks */
+@media (max-width: 700px) {
+  .portfolio-info h3 {
+    font-size: 1rem;
+  }
+  .portfolio-info p {
+    font-size: 0.85rem;
+  }
+}
+/* =========================
+   TASK 14: RESPONSIVE DATA TABLE — CAR THEME
+   ========================= */
+#task14 {
+  background: linear-gradient(180deg, #e3f2fd, #f9fbff);
+  padding: 40px 20px 70px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#task14 h1 {
+  text-align: center;
+  color: #0d47a1;
+}
+
+.task-subtitle {
+  text-align: center;
+  color: #333;
+  margin-bottom: 35px;
+}
+
+/* Table container for mobile responsiveness */
+.table-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #dce4ff;
+}
+
+/* Car Table */
+.car-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 600px;
+}
+
+.car-table thead {
+  background: #0d47a1;
+  color: #fff;
+}
+
+.car-table th,
+.car-table td {
+  padding: 14px 16px;
+  font-size: 0.95rem;
+}
+
+.car-table tbody tr:nth-child(even) {
+  background: #f3f7ff;
+}
+
+.car-table tbody tr:hover {
+  background: #e8f0fe;
+  transition: background 0.3s ease;
+}
+
+/* Highlight availability */
+.available {
+  color: #1b5e20;
+  font-weight: 600;
+}
+.limited {
+  color: #f57c00;
+  font-weight: 600;
+}
+.soldout {
+  color: #b71c1c;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .car-table th,
+  .car-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+  #task14 h1 {
+    font-size: 1.4rem;
+  }
+}
+/* =========================
+   TASK 15: MOBILE-FIRST LANDING PAGE — CAR THEME
+   ========================= */
+
+/* General layout */
+#task15 {
+  background: linear-gradient(180deg, #f3f6ff, #e3f2fd);
+  padding: 30px 15px 70px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+.landing-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.landing-header h1 {
+  color: #0d47a1;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  background: #1565c0;
+  color: #fff;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.hero-content h2 {
+  color: #0d47a1;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.hero-content button {
+  background: #0d47a1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero-content button:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.feature {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #dbe2ff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  color: #0d47a1;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   MEDIA QUERIES (Progressive Enhancement)
+   ========================= */
+
+/* Tablets */
+@media (min-width: 700px) {
+  .hero-section {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-content {
+    flex: 1;
+    padding-right: 20px;
+  }
+
+  .hero-image {
+    flex: 1;
+  }
+
+  .features {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .feature {
+    width: 280px;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1000px) {
+  .landing-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  .landing-header h1 {
+    font-size: 2rem;
+  }
+
+  .nav-menu {
+    gap: 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+/* =========================
+   TASK 16: COMMON BREAKPOINT IMPLEMENTATION — CAR THEME
+   ========================= */
+
+/* Mobile First Approach */
+/* Base styles for mobile (0px - 767px) */
+#task16 {
+  background: linear-gradient(180deg, #f3f6ff, #e3f2fd);
+  padding: 40px 20px 70px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.breakpoint-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.car-card {
+  background: #fff;
+  border: 1px solid #dce4ff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+}
+
+.car-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.car-card h3 {
+  color: #0d47a1;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+  .breakpoint-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .car-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .breakpoint-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .car-card img {
+    height: 200px;
+  }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+  .breakpoint-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #task16 h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Extra Large (1400px and up) */
+@media (min-width: 1400px) {
+  #task16 {
+    padding: 60px 100px;
+  }
+  .car-card h3 {
+    font-size: 1.2rem;
+  }
+}
+/* =========================
+   TASK 17: RESPONSIVE UTILITY CLASSES — CAR THEME
+   ========================= */
+
+/* General Section Styling */
+#task17 {
+  background: linear-gradient(180deg, #f3f6ff, #e3f2fd);
+  padding: 40px 20px 70px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.car-utility-demo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.utility-box {
+  background: #fff;
+  border: 1px solid #dce4ff;
+  border-radius: 8px;
+  padding: 15px 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  color: #0d47a1;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE VISIBILITY UTILITIES
+   ========================= */
+
+/* By default, all hidden */
+.show-mobile,
+.show-tablet,
+.show-desktop {
+  display: none;
+}
+
+/* Mobile (0–767px) */
+@media (max-width: 767px) {
+  .show-mobile {
+    display: block;
+  }
+}
+
+/* Tablet (768px–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .show-tablet {
+    display: block;
+  }
+}
+
+/* Desktop (1024px and above) */
+@media (min-width: 1024px) {
+  .show-desktop {
+    display: block;
+  }
+}
+
+/* =========================
+   RESPONSIVE SPACING UTILITIES
+   (Margins and Paddings)
+   ========================= */
+.mt-lg-4 {
+  margin-top: 40px;
+}
+.mt-md-3 {
+  margin-top: 20px;
+}
+.p-md-3 {
+  padding: 20px;
+}
+.p-lg-4 {
+  padding: 40px;
+}
+
+/* =========================
+   RESPONSIVE TEXT ALIGNMENT
+   ========================= */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .text-md-left {
+    text-align: left;
+  }
+  .text-md-center {
+    text-align: center;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  .text-lg-right {
+    text-align: right;
+  }
+}
+
+/* =========================
+   FLEXBOX UTILITIES
+   ========================= */
+.flex-demo {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #dce4ff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Default Flex */
+.flex-row {
+  flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
+}
+
+/* Responsive Flex Directions */
+@media (min-width: 768px) {
+  .flex-md-row {
+    flex-direction: row;
+  }
+  .flex-md-col {
+    flex-direction: column;
+  }
+}
+
+/* Flex Justify & Align Utilities */
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+
+/* Car boxes inside flex */
+.car-box {
+  background: #e3f2fd;
+  border-radius: 8px;
+  padding: 20px;
+  color: #0d47a1;
+  font-weight: 600;
+  min-width: 120px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.car-box:hover {
+  transform: scale(1.05);
+}
+/* ================== Task 18: Dark Mode & Preference Media Queries ================== */
+
+#task18 {
+  padding: 4rem 2rem;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  margin-top: 3rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+#task18 h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#task18 p {
+  color: #333;
+  max-width: 750px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.car-demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-image {
+  width: 280px;
+  max-width: 90%;
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.car-btn {
+  margin-top: 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.car-btn:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+}
+
+/* ---------- prefers-color-scheme (Dark / Light Mode) ---------- */
+@media (prefers-color-scheme: dark) {
+  #task18 {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  #task18 h2 {
+    color: #ffffff;
+  }
+
+  #task18 p {
+    color: #d0d0d0;
+  }
+
+  .car-btn {
+    background-color: #1e88e5;
+  }
+
+  .car-image {
+    filter: brightness(0.85);
+    content: url("images/img40.jpeg"); /* Optional: use dark mode car image */
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  #task18 {
+    background-color: #f7f7f7;
+    color: #222;
+  }
+
+  .car-btn {
+    background-color: #007bff;
+  }
+
+  .car-image {
+    content: url("images/img40.jpeg"); /* Revert to light mode image */
+  }
+}
+
+/* ---------- prefers-reduced-motion (Accessibility) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important; /* ================== Task 18: Dark Mode & Preference Media Queries ================== */
+
+    #task18 {
+      padding: 4rem 2rem;
+      background-color: #f7f7f7;
+      border-radius: 20px;
+      margin-top: 3rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    #task18 h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #111;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    #task18 p {
+      color: #333;
+      max-width: 750px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    .car-demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .car-image {
+      width: 280px;
+      max-width: 90%;
+      transition: transform 0.5s ease, filter 0.3s ease;
+    }
+
+    .car-btn {
+      margin-top: 1.5rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .car-btn:hover {
+      transform: scale(1.05);
+      background-color: #0056b3;
+    }
+
+    /* ---------- prefers-color-scheme (Dark / Light Mode) ---------- */
+    @media (prefers-color-scheme: dark) {
+      #task18 {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+
+      #task18 h2 {
+        color: #ffffff;
+      }
+
+      #task18 p {
+        color: #d0d0d0;
+      }
+
+      .car-btn {
+        background-color: #1e88e5;
+      }
+
+      .car-image {
+        filter: brightness(0.85);
+        content: url("images/img40.jpeg"); /* Optional: use dark mode car image */
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      #task18 {
+        background-color: #f7f7f7;
+        color: #222;
+      }
+
+      .car-btn {
+        background-color: #007bff;
+      }
+
+      .car-image {
+        content: url("images/img40.jpeg"); /* Revert to light mode image */
+      }
+    }
+
+    /* ---------- prefers-reduced-motion (Accessibility) ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .car-image,
+      .car-btn {
+        transform: none !important;
+      }
+    }
+
+    /* ---------- prefers-contrast (High Contrast Mode) ---------- */
+    @media (prefers-contrast: more) {
+      #task18 {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .car-btn {
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #fff;
+      }
+
+      .car-image {
+        filter: contrast(1.6) brightness(1.1);
+      }
+    }
+
+    /* ---------- print (Print-Friendly Layout) ---------- */
+    @media print {
+      #task18 {
+        background-color: white;
+        color: black;
+        box-shadow: none;
+      }
+
+      .car-btn,
+      .car-image {
+        display: none;
+      }
+
+      #task18 h2 {
+        font-size: 20pt;
+      }
+
+      #task18 p {
+        font-size: 12pt;
+      }
+    }
+
+    transition: none !important;
+  }
+
+  .car-image,
+  .car-btn {
+    transform: none !important;
+  }
+}
+
+/* ---------- prefers-contrast (High Contrast Mode) ---------- */
+@media (prefers-contrast: more) {
+  #task18 {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .car-btn {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #fff;
+  }
+
+  .car-image {
+    filter: contrast(1.6) brightness(1.1);
+  }
+}
+
+/* ---------- print (Print-Friendly Layout) ---------- */
+@media print {
+  #task18 {
+    background-color: white;
+    color: black;
+    box-shadow: none;
+  }
+
+  .car-btn,
+  .car-image {
+    display: none;
+  }
+
+  #task18 h2 {
+    font-size: 20pt;
+  }
+
+  #task18 p {
+    font-size: 12pt;
+  }
+}

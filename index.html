@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Display Property Showcase — Lab 05</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Display Property Showcase</h1>
+      <p class="lead">
+        Demonstrates block / inline / inline-block / table / hidden + responsive
+        changes
+      </p>
+    </header>
+
+    <main class="container">
+      <section id="block-inline" class="demo-card">
+        <h2>Block, Inline, Inline-block</h2>
+
+        <div class="demo-row">
+          <div class="box block-box">.block (div default)</div>
+          <span class="box inline-box">.inline (span)</span>
+          <span class="box inline-block-box">.inline-block (span)</span>
+        </div>
+
+        <p class="explain">
+          <strong>Notes:</strong> block elements take full width; inline
+          elements flow with text; inline-block accepts width/height while
+          flowing inline.
+        </p>
+      </section>
+
+      <section id="display-table" class="demo-card">
+        <h2>Table-like Layout (without &lt;table&gt;)</h2>
+
+        <div class="fake-table">
+          <div class="fake-row">
+            <div class="fake-cell">Name</div>
+            <div class="fake-cell">Status</div>
+            <div class="fake-cell">Action</div>
+          </div>
+          <div class="fake-row">
+            <div class="fake-cell">Project A</div>
+            <div class="fake-cell">Active</div>
+            <div class="fake-cell">View</div>
+          </div>
+          <div class="fake-row">
+            <div class="fake-cell">Project B</div>
+            <div class="fake-cell">Draft</div>
+            <div class="fake-cell">Edit</div>
+          </div>
+        </div>
+
+        <p class="explain">
+          Using display: table / table-row / table-cell to mimic table layout
+          without table markup.
+        </p>
+      </section>
+
+      <section id="hidden-demo" class="demo-card">
+        <h2>Hidden vs Visibility</h2>
+
+        <div class="hidden-row">
+          <div class="box visible-box">Visible element</div>
+          <div class="box visibility-hidden-box">
+            visibility: hidden (keeps layout space)
+          </div>
+          <div class="box display-none-box">
+            display: none (removed from layout)
+          </div>
+        </div>
+
+        <p class="explain">
+          Compare how each property affects layout and accessibility.
+        </p>
+      </section>
+
+      <section id="responsive-demo" class="demo-card">
+        <h2>Responsive Display Changes</h2>
+        <div class="responsive-row">
+          <div class="card">Card 1</div>
+          <div class="card">Card 2</div>
+          <div class="card">Card 3</div>
+        </div>
+        <p class="explain">
+          Mobile-first: single column on small screens; multi-column on larger
+          screens via media queries.
+        </p>
+      </section>
+
+      <!-- =========================
+     TASK 2: FLOAT-BASED MAGAZINE LAYOUT
+     ========================= -->
+      <section id="task2" class="task-section">
+        <h1>Task 2: Float-Based Magazine Layout</h1>
+
+        <article class="mag-article">
+          <img
+            src="images/img2.jpeg"
+            alt="Decor Photo"
+            class="float-left article-img"
+          />
+          <h2>Floating Image on the Left</h2>
+          <p>
+            This article demonstrates how text wraps around an image floated to
+            the left. The float property lets text flow around the image,
+            similar to how newspapers or magazines align content.
+          </p>
+          <p>
+            Margins create space around the image, while
+            <code>clear</code> ensures elements below start beneath floats.
+          </p>
+        </article>
+
+        <article class="mag-article">
+          <img
+            src="images/img1.jpg"
+            alt="Architecture Photo"
+            class="float-right article-img"
+          />
+          <h2>Floating Image on the Right</h2>
+          <p>
+            In this example, the image is floated to the right so the text wraps
+            on the left. Alternating float directions gives a balanced magazine
+            feel.
+          </p>
+          <p>
+            To prevent collapsing issues, the parent uses
+            <code>overflow: hidden</code> to contain floated elements.
+          </p>
+        </article>
+
+        <aside class="sidebar">
+          <h3>Sidebar</h3>
+          <p>
+            The sidebar is floated to the right to simulate a second column,
+            similar to the side sections of real magazine pages.
+          </p>
+        </aside>
+
+        <div class="clear"></div>
+      </section>
+    </main>
+
+    <!-- =========================
+     TASK 3: CSS POSITIONING SHOWCASE
+     ========================= -->
+    <section id="task3" class="task-section">
+      <h1>Task 3: CSS Positioning Showcase</h1>
+
+      <div class="pos-container">
+        <div class="pos-box static-box">Static</div>
+        <div class="pos-box relative-box">Relative</div>
+        <div class="pos-box absolute-box">Absolute</div>
+        <div class="pos-box sticky-box">Sticky</div>
+      </div>
+
+      <p class="pos-info">
+        Scroll down to observe the <strong>sticky</strong> box—it behaves like a
+        normal element until its top reaches the viewport, then it “sticks.”
+        Also, note how <strong>absolute</strong> and
+        <strong>relative</strong> positioning differ in layout behavior.
+      </p>
+
+      <div class="pos-scroll-area">
+        <p>Keep scrolling to test sticky behavior...</p>
+        <p>This filed shows the behaviour of sticky notes thta how it works.</p>
+      </div>
+    </section>
+
+    <!-- =========================
+     TASK 4: FLEXBOX GALLERY LAYOUT
+     ========================= -->
+    <section id="task4" class="task-section">
+      <h1>Task 4: Flexbox Gallery Layout</h1>
+
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="images/img3.jpeg" alt="Nature 1" />
+          <p class="caption">Peaceful Lake</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/img4.jpeg" alt="Nature 2" />
+          <p class="caption">Mountain View</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/img5.jpeg" alt="Nature 3" />
+          <p class="caption">Golden Forest</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/img6.jpeg" alt="Nature 4" />
+          <p class="caption">Desert Dunes</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/img7.jpeg" alt="Nature 5" />
+          <p class="caption">Snowy Peaks</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/img8.jpeg" alt="Nature 6" />
+          <p class="caption">Tropical Paradise</p>
+        </div>
+      </div>
+
+      <p class="gallery-note">
+        This gallery uses <strong>Flexbox</strong> to align items, wrap content,
+        and maintain spacing across various screen sizes. Resize your browser to
+        see how the images adjust automatically.
+      </p>
+    </section>
+    <!-- =========================
+     TASK 5: CSS GRID LAYOUT — CAR THEME
+     ========================= -->
+    <section id="task5" class="task-section">
+      <h1>Task 5: CSS Grid Layout — Car Theme</h1>
+
+      <div class="car-grid">
+        <div class="car-header">🏎️ SpeedZone Motors</div>
+
+        <div class="car-hero">
+          <img src="images/img9.jpeg" alt="Sports Car" />
+          <div class="hero-text">
+            <h2>Drive the Future</h2>
+            <p>Experience innovation, performance, and design excellence.</p>
+          </div>
+        </div>
+
+        <div class="car-list">
+          <div class="car-item">
+            <img src="images/img10.jpeg" alt="Car 1" />
+            <h3>Mustang GT</h3>
+            <p>5.0L V8 • 450 HP • Manual Transmission</p>
+          </div>
+          <div class="car-item">
+            <img src="images/img11.jpeg" alt="Car 2" />
+            <h3>BMW M4</h3>
+            <p>3.0L Twin-Turbo • 473 HP • Luxury Sport Coupe</p>
+          </div>
+          <div class="car-item">
+            <img src="images/img12.jpeg" alt="Car 3" />
+            <h3>Chevrolet Camaro SS</h3>
+            <p>6.2L V8 • 455 HP • Classic American Muscle</p>
+          </div>
+        </div>
+
+        <div class="car-specs">
+          <h3>Why Choose SpeedZone?</h3>
+          <ul>
+            <li>Top performance vehicles tested for safety and speed.</li>
+            <li>Exclusive warranty and maintenance packages.</li>
+            <li>Flexible financing and trade-in options.</li>
+          </ul>
+        </div>
+
+        <div class="car-footer">
+          © 2025 SpeedZone Motors — All Rights Reserved
+        </div>
+      </div>
+
+      <p class="grid-note">
+        This section uses <strong>CSS Grid</strong> to structure a car-themed
+        layout with hero imagery, product listings, and information panels.
+      </p>
+    </section>
+
+    <!-- =========================
+     TASK 6: CSS TRANSITIONS & TRANSFORMATIONS — CAR THEME
+     ========================= -->
+    <section id="task6" class="task-section">
+      <h1>Task 6: CSS Transitions & Transformations — Car Theme</h1>
+
+      <div class="car-animation-container">
+        <div class="car-card zoom-card">
+          <img src="images/img13.jpeg" alt="Zoom Car" />
+          <h3>Zoom Effect</h3>
+          <p>
+            Hover to see the car zoom in slightly — achieved using
+            <code>transform: scale()</code>.
+          </p>
+        </div>
+
+        <div class="car-card rotate-card">
+          <img src="images/img14.jpeg" alt="Rotate Car" />
+          <h3>Rotate Effect</h3>
+          <p>
+            This car spins slightly when hovered — using
+            <code>transform: rotate()</code>.
+          </p>
+        </div>
+
+        <div class="car-card move-card">
+          <img src="images/img15.jpeg" alt="Move Car" />
+          <h3>Slide Effect</h3>
+          <p>
+            Hover to slide this car upward — using
+            <code>transform: translateY()</code>.
+          </p>
+        </div>
+
+        <div class="car-card skew-card">
+          <img src="images/img16.jpeg" alt="Skew Car" />
+          <h3>Skew Effect</h3>
+          <p>
+            This card tilts dynamically — using <code>transform: skew()</code>.
+          </p>
+        </div>
+      </div>
+
+      <p class="transition-note">
+        Each car card uses CSS <strong>transitions</strong> for smooth animation
+        and <strong>transformations</strong> to change shape or position on
+        hover.
+      </p>
+    </section>
+
+    <!-- =========================
+     TASK 7: HOLY GRAIL LAYOUT — CAR THEME
+     ========================= -->
+    <section id="task7" class="task-section">
+      <h1>Task 7: Holy Grail Layout — Car Theme</h1>
+
+      <!-- ============ 7A Float Layout ============ -->
+      <div class="holy-grail float-layout">
+        <h2>7A — Float Implementation</h2>
+        <aside class="hg-left">
+          🏎️ Car News
+          <ul>
+            <li>New Mustang GT 2025 revealed</li>
+            <li>BMW M series concept launch</li>
+          </ul>
+        </aside>
+
+        <main class="hg-center">
+          <h3>Featured Model: Tesla Model S Plaid</h3>
+          <p>
+            Electric power, instant torque, and unmatched luxury. With 1,020 hp
+            and a 0–60 mph time under 2 seconds, this is the future of
+            performance driving.
+          </p>
+          <img src="images/img17.jpeg" alt="Tesla Model S" />
+        </main>
+
+        <aside class="hg-right">
+          🔥 Offers
+          <ul>
+            <li>10% off select sports cars</li>
+            <li>Free maintenance for 2 years</li>
+          </ul>
+        </aside>
+        <div class="hg-clear"></div>
+      </div>
+
+      <!-- ============ 7B Flexbox Layout ============ -->
+      <div class="holy-grail flex-layout">
+        <h2>7B — Flexbox Implementation</h2>
+        <aside class="hg-left">
+          🏁 Car Brands
+          <ul>
+            <li>Ferrari</li>
+            <li>Porsche</li>
+            <li>Lamborghini</li>
+          </ul>
+        </aside>
+
+        <main class="hg-center">
+          <h3>Main Showroom</h3>
+          <p>
+            Explore our collection of luxury vehicles crafted for speed and
+            elegance.
+          </p>
+          <img src="images/img18.jpeg" alt="Sports Car Showroom" />
+        </main>
+
+        <aside class="hg-right">
+          ⚙️ Specs Highlight
+          <ul>
+            <li>Horsepower: 700+</li>
+            <li>Top Speed: 320 km/h</li>
+            <li>Transmission: Dual-Clutch</li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- ============ 7C Grid Layout ============ -->
+      <div class="holy-grail grid-layout">
+        <h2>7C — Grid Implementation</h2>
+        <aside class="hg-left">
+          🚘 Upcoming Releases
+          <ul>
+            <li>Audi RS8 E-Tron</li>
+            <li>Chevy Corvette ZR1</li>
+          </ul>
+        </aside>
+
+        <main class="hg-center">
+          <h3>Car of the Year — McLaren 750S</h3>
+          <p>
+            Lightweight carbon fiber body and astonishing acceleration make this
+            supercar a masterpiece of engineering.
+          </p>
+          <img src="images/img19.jpeg" alt="McLaren 750S" />
+        </main>
+
+        <aside class="hg-right">
+          💡 Quick Facts
+          <ul>
+            <li>0–100 km/h in 2.8 s</li>
+            <li>Max Torque 800 Nm</li>
+            <li>Carbon-ceramic brakes</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =========================
+     TASK 8: E-COMMERCE PRODUCT GRID — CAR THEME
+     ========================= -->
+    <section id="task8" class="task-section">
+      <h1>Task 8: E-Commerce Product Grid — Car Theme</h1>
+      <p class="task-subtitle">Explore our featured car collection.</p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/img11.jpeg" alt="Mustang GT" />
+          <h3>Ford Mustang GT 2025</h3>
+          <p>5.0 L V8 · 480 HP · Manual</p>
+          <span class="price">$65,000</span>
+          <button>Buy Now</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/img10.jpeg" alt="BMW M4 Coupe" />
+          <h3>BMW M4 Competition</h3>
+          <p>3.0 L Twin-Turbo I6 · 503 HP</p>
+          <span class="price">$78,500</span>
+          <button>Buy Now</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/img9.jpeg" alt="Tesla Model S" />
+          <h3>Tesla Model S Plaid</h3>
+          <p>Electric · 1,020 HP · 0–60 in 1.9 s</p>
+          <span class="price">$92,000</span>
+          <button>Buy Now</button>
+        </div>
+
+        <div class="product-card">
+          <img src="images/img15.jpeg" alt="Lamborghini Huracán" />
+          <h3>Lamborghini Huracán EVO</h3>
+          <p>V10 · 630 HP · Dual Clutch</p>
+          <span class="price">$210,000</span>
+          <button>Buy Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     TASK 9: DASHBOARD LAYOUT — CAR THEME
+     ========================= -->
+    <section id="task9" class="task-section">
+      <h1>Task 9: Dashboard Layout — Car Theme</h1>
+      <p class="task-subtitle">
+        Overview of performance, sales, and inventory insights.
+      </p>
+
+      <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="dash-sidebar">
+          <h2>SpeedZone Admin</h2>
+          <ul>
+            <li>🏠 Dashboard</li>
+            <li>🚗 Inventory</li>
+            <li>💰 Sales</li>
+            <li>📊 Analytics</li>
+            <li>👤 Profile</li>
+            <li>⚙️ Settings</li>
+          </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dash-main">
+          <!-- Top Cards -->
+          <div class="stats">
+            <div class="card">
+              <h3>Total Sales</h3>
+              <p>$1,250,000</p>
+              <span>+12% this month</span>
+            </div>
+            <div class="card">
+              <h3>Cars Sold</h3>
+              <p>584</p>
+              <span>+8% this quarter</span>
+            </div>
+            <div class="card">
+              <h3>Available Inventory</h3>
+              <p>240</p>
+              <span>Updated daily</span>
+            </div>
+          </div>
+
+          <!-- Analytics Section -->
+          <div class="analytics">
+            <h2>Sales Analytics</h2>
+            <p>Peak sales recorded in Q3 for luxury and electric vehicles.</p>
+            <img src="images/img20.png" alt="Sales Analytics Graph" />
+          </div>
+
+          <!-- Recent Orders -->
+          <div class="recent-orders">
+            <h2>Recent Orders</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Model</th>
+                  <th>Customer</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#1001</td>
+                  <td>BMW M4</td>
+                  <td>Ali Khan</td>
+                  <td>$78,500</td>
+                  <td class="status success">Delivered</td>
+                </tr>
+                <tr>
+                  <td>#1002</td>
+                  <td>Mustang GT</td>
+                  <td>Ayesha Malik</td>
+                  <td>$65,000</td>
+                  <td class="status pending">Pending</td>
+                </tr>
+                <tr>
+                  <td>#1003</td>
+                  <td>Tesla Model S</td>
+                  <td>Usman Tariq</td>
+                  <td>$92,000</td>
+                  <td class="status cancelled">Cancelled</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- =========================
+     TASK 10: MEDIA QUERY DEMONSTRATION — CAR THEME
+     ========================= -->
+    <section id="task10" class="task-section">
+      <h1>Task 10: Media Query Demonstration — Car Theme</h1>
+      <p class="task-subtitle">
+        Resize your screen to see how this car showcase adjusts layout, text,
+        and imagery for different devices.
+      </p>
+
+      <div class="media-demo">
+        <div class="car-info">
+          <h2>Mercedes AMG GT</h2>
+          <p>
+            The AMG GT combines stunning design with raw performance. Its 4.0L
+            twin-turbo V8 delivers 577 hp, while its adaptive suspension makes
+            every curve thrilling.
+          </p>
+          <button>View Details</button>
+        </div>
+
+        <div class="car-image">
+          <img src="images/img22.jpeg" alt="Mercedes AMG GT" />
+        </div>
+      </div>
+    </section>
+    <!-- =========================
+     TASK 11: RESPONSIVE MAGAZINE LAYOUT — CAR THEME
+     ========================= -->
+    <section id="task11" class="task-section">
+      <h1>Task 11: Responsive Magazine Layout — Car Theme</h1>
+      <p class="task-subtitle">
+        Automotive insights, reviews, and new model highlights.
+      </p>
+
+      <div class="magazine-grid">
+        <!-- Article 1 -->
+        <article class="mag-card">
+          <img src="images/img27.jpeg" alt="Tesla Cybertruck" />
+          <div class="mag-content">
+            <h3>Tesla Cybertruck: Future of Pickup Trucks</h3>
+            <p>
+              Built from stainless steel with all-electric power, Tesla’s
+              Cybertruck blends futuristic design with utility and raw power.
+            </p>
+            <button>Read More</button>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="mag-card">
+          <img src="images/img26.jpeg" alt="Ferrari SF90" />
+          <div class="mag-content">
+            <h3>Ferrari SF90 Stradale Review</h3>
+            <p>
+              Hybrid supercar redefining performance with 986 hp and unmatched
+              Italian craftsmanship.
+            </p>
+            <button>Read More</button>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="mag-card">
+          <img src="images/img25.jpeg" alt="Audi E-Tron" />
+          <div class="mag-content">
+            <h3>Audi E-Tron GT: Electric Elegance</h3>
+            <p>
+              Power, precision, and pure electric excitement — the Audi E-Tron
+              GT sets a new standard in luxury EVs.
+            </p>
+            <button>Read More</button>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="mag-card">
+          <img src="images/img24.jpeg" alt="Lamborghini Revuelto" />
+          <div class="mag-content">
+            <h3>Lamborghini Revuelto: The Hybrid V12</h3>
+            <p>
+              Lamborghini’s first hybrid V12 is here — delivering 1,001 hp and
+              an emotional roar of innovation.
+            </p>
+            <button>Read More</button>
+          </div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="mag-card">
+          <img src="images/img23.jpeg" alt="Porsche Taycan" />
+          <div class="mag-content">
+            <h3>Porsche Taycan Turbo S</h3>
+            <p>
+              Where Porsche performance meets electric precision. Taycan’s dual
+              motors and futuristic cockpit impress every driver.
+            </p>
+            <button>Read More</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================
+     TASK 12: FLEXBOX FORM BUILDER — CAR THEME
+     ========================= -->
+    <section id="task12" class="task-section">
+      <h1>Task 12: Flexbox Form Builder — Car Theme</h1>
+      <p class="task-subtitle">
+        Fill out the form below to inquire about or book your dream car.
+      </p>
+
+      <form class="car-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Full Name</label>
+            <input
+              type="text"
+              id="fname"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="example@email.com"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="+92 300 0000000"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="car-model">Select Car Model</label>
+            <select id="car-model" required>
+              <option value="">Choose a model</option>
+              <option>Ford Mustang GT</option>
+              <option>BMW M4 Competition</option>
+              <option>Tesla Model S Plaid</option>
+              <option>Lamborghini Huracán</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="message">Additional Message</label>
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Type your message here..."
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="form-row center">
+          <button type="submit">Submit Inquiry</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- =========================
+     TASK 13: PORTFOLIO LAYOUT — CAR THEME
+     ========================= -->
+    <section id="task13" class="task-section">
+      <h1>Task 13: Portfolio Layout — Car Theme</h1>
+      <p class="task-subtitle">
+        Meet the top car designers and their latest concept models.
+      </p>
+
+      <div class="portfolio-container">
+        <!-- Card 1 -->
+        <div class="portfolio-card">
+          <img src="images/img28.jpeg" alt="Car Designer 1" />
+          <div class="portfolio-info">
+            <h3>Alex Carter</h3>
+            <p>
+              Lead designer at Ford. Specialized in futuristic concept cars and
+              electric designs.
+            </p>
+            <button>View Profile</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="portfolio-card">
+          <img src="images/img29.jpeg" alt="Car Designer 2" />
+          <div class="portfolio-info">
+            <h3>Maria Rossi</h3>
+            <p>
+              Ferrari’s senior aerodynamic engineer behind the SF90 and
+              Purosangue models.
+            </p>
+            <button>View Profile</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="portfolio-card">
+          <img src="images/img30.jpeg" alt="Car Designer 3" />
+          <div class="portfolio-info">
+            <h3>Yuto Nakamura</h3>
+            <p>
+              Chief designer at Lexus. Known for blending tradition with modern
+              Japanese luxury.
+            </p>
+            <button>View Profile</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="portfolio-card">
+          <img src="images/img31.jpeg" alt="Car Designer 4" />
+          <div class="portfolio-info">
+            <h3>Lucas Smith</h3>
+            <p>
+              BMW’s creative mind behind the i8 and M Vision concepts —
+              sustainable performance.
+            </p>
+            <button>View Profile</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     TASK 14: RESPONSIVE DATA TABLE — CAR THEME
+     ========================= -->
+    <section id="task14" class="task-section">
+      <h1>Task 14: Responsive Data Table — Car Theme</h1>
+      <p class="task-subtitle">
+        Explore our updated car inventory with details on pricing, model year,
+        and availability.
+      </p>
+
+      <div class="table-container">
+        <table class="car-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Year</th>
+              <th>Price</th>
+              <th>Condition</th>
+              <th>Availability</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Ford Mustang GT</td>
+              <td>2025</td>
+              <td>$65,000</td>
+              <td>New</td>
+              <td class="available">In Stock</td>
+            </tr>
+            <tr>
+              <td>BMW M4 Competition</td>
+              <td>2024</td>
+              <td>$78,500</td>
+              <td>Used</td>
+              <td class="limited">Limited Stock</td>
+            </tr>
+            <tr>
+              <td>Tesla Model S Plaid</td>
+              <td>2025</td>
+              <td>$92,000</td>
+              <td>New</td>
+              <td class="available">In Stock</td>
+            </tr>
+            <tr>
+              <td>Lamborghini Huracán EVO</td>
+              <td>2023</td>
+              <td>$210,000</td>
+              <td>New</td>
+              <td class="soldout">Sold Out</td>
+            </tr>
+            <tr>
+              <td>Audi E-Tron GT</td>
+              <td>2024</td>
+              <td>$104,000</td>
+              <td>New</td>
+              <td class="limited">Limited Stock</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- =========================
+     TASK 15: MOBILE-FIRST LANDING PAGE — CAR THEME
+     ========================= -->
+    <section id="task15" class="task-section">
+      <header class="landing-header">
+        <h1>SpeedZone Motors</h1>
+        <nav class="nav-menu">
+          <a href="#">Home</a>
+          <a href="#">Models</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+
+      <div class="hero-section">
+        <div class="hero-content">
+          <h2>Drive the Future Today</h2>
+          <p>
+            Discover innovation, power, and performance — all in one place. Your
+            next dream car awaits at SpeedZone Motors.
+          </p>
+          <button>Explore Models</button>
+        </div>
+        <div class="hero-image">
+          <img src="images/img32.jpeg" alt="Luxury Sports Car" />
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <img src="images/img33.jpeg" alt="Electric Power" />
+          <h3>Electric Innovation</h3>
+          <p>
+            Experience cutting-edge electric technology with unmatched
+            efficiency and speed.
+          </p>
+        </div>
+
+        <div class="feature">
+          <img src="images/img34.jpeg" alt="Luxury Interiors" />
+          <h3>Luxury Interiors</h3>
+          <p>
+            Step inside premium comfort, precision craftsmanship, and
+            state-of-the-art design.
+          </p>
+        </div>
+
+        <div class="feature">
+          <img src="images/img35.jpeg" alt="Performance Engine" />
+          <h3>Performance Engine</h3>
+          <p>
+            Feel the adrenaline of next-generation turbocharged engines built
+            for thrill.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     TASK 16: COMMON BREAKPOINT IMPLEMENTATION — CAR THEME
+     ========================= -->
+    <section id="task16" class="task-section">
+      <h1>Task 16: Common Breakpoint Implementation — Car Theme</h1>
+      <p class="task-subtitle">
+        Resize your screen to see how the layout adjusts across devices.
+      </p>
+
+      <div class="breakpoint-grid">
+        <div class="car-card">
+          <img src="images/img26.jpeg" alt="Sports Car" />
+          <h3>Ferrari 488 GTB</h3>
+        </div>
+        <div class="car-card">
+          <img src="images/img36.jpeg" alt="SUV" />
+          <h3>Range Rover Evoque</h3>
+        </div>
+        <div class="car-card">
+          <img src="images/img37.jpeg" alt="Electric Car" />
+          <h3>Tesla Model 3</h3>
+        </div>
+        <div class="car-card">
+          <img src="images/img38.jpeg" alt="Luxury Sedan" />
+          <h3>BMW 7 Series</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     TASK 17: RESPONSIVE UTILITY CLASSES — CAR THEME
+     ========================= -->
+    <section id="task17" class="task-section">
+      <h1>Task 17: Responsive Utility Classes — Car Theme</h1>
+      <p class="task-subtitle">
+        Demonstration of show/hide, spacing, alignment, and flex utilities.
+      </p>
+
+      <!-- Visibility Utilities -->
+      <div class="car-utility-demo">
+        <div class="utility-box show-mobile">
+          <p>Visible only on <strong>Mobile</strong></p>
+        </div>
+        <div class="utility-box show-tablet">
+          <p>Visible only on <strong>Tablet</strong></p>
+        </div>
+        <div class="utility-box show-desktop">
+          <p>Visible only on <strong>Desktop</strong></p>
+        </div>
+      </div>
+
+      <!-- Responsive Spacing & Text Alignment -->
+      <div class="spacing-demo mt-lg-4 p-md-3 text-center text-md-left">
+        <h2>BMW M4 Competition</h2>
+        <p>
+          Precision, performance, and presence — the M4 defines modern driving
+          excellence.
+        </p>
+      </div>
+
+      <!-- Flex Utilities -->
+      <div class="flex-demo flex-col flex-md-row justify-center align-center">
+        <div class="car-box">🚗 Car 1</div>
+        <div class="car-box">🏎️ Car 2</div>
+        <div class="car-box">🚙 Car 3</div>
+      </div>
+    </section>
+
+    <!-- ================== Task 18: Dark Mode & Preference Media Queries ================== -->
+    <section id="task18" class="task-section">
+      <h2>Task 18: Dark Mode & Preference Media Queries</h2>
+      <p>
+        This section demonstrates how the website adapts to different user and
+        system preferences, such as dark mode, motion reduction, high contrast,
+        and print-friendly layouts — all while maintaining the car theme.
+      </p>
+
+      <div class="car-demo">
+        <img src="images/img40.jpeg" alt="Car Image" class="car-image" />
+        <button class="car-btn">Explore Cars</button>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <small>Lab 05 — Display Property Showcase</small>
+    </footer>
+  </body>
+</html>
